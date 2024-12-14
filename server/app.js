@@ -21,8 +21,12 @@ app.use(express.urlencoded({ limit: '50mb', extended: true }));
 app.use('/api/v1', [postRouter, dalleRouter]);
 app.use(errorHandler);
 
-app.get('/', (req, res) => {
+app.get('/home', (req, res) => {
     res.status(200).send('Hello from the DALL-E API');
+});
+
+app.all('*', (req, res) => {
+    res.status(404).send('Page not found');
 });
 
 connectDB(true); //true if we want to connect to the online database
