@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
     res.status(200).send('Hello from the DALL-E API');
 });
 
-connectDB(false); //true if we want to connect to the online database
+connectDB(true); //true if we want to connect to the online database
 
 mongoose.connection.on("connected", async () => {
     console.log("SUCCESSFULLY CONNECTED TO DATABASE");
