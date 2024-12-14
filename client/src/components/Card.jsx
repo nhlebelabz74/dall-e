@@ -24,7 +24,7 @@ const Card = ({ id, name, prompt, image }) => {
                     </div>
 
                     <button
-                        onClick={() => downloadImage({ id: id, image: image })}
+                        onClick={() => downloadImage({ id: id, url: image })}
                         className="flex gap-2 items-center rounded-full bg-blue"
                     >
                         <img
