@@ -11,15 +11,16 @@ const getRandomPrompt = (prompt) => {
 
 const downloadImage = async ({ id, url }) => {
   try {
-    // Fetch the image as a Blob
+    console.log('Attempting to download from URL:', url);
+
     const response = await axios.get(url, {
-      responseType: 'blob', // Important for downloading binary data
+      responseType: 'blob', // For downloading binary data
     });
 
-    // Save the file using FileSaver
     FileSaver.saveAs(response.data, `download-${id}.png`);
+    console.log('Image downloaded successfully');
   } catch (error) {
-    console.error('Error downloading image:', error);
+    console.error('Error downloading image:', error.message || error);
   }
 };
 

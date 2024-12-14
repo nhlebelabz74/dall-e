@@ -10,7 +10,11 @@ const createPost = asyncWrapper(async (req, res) => {
         cloudinary.config({
             cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
             api_key: process.env.CLOUDINARY_API_KEY,
-            api_secret: process.env.CLOUDINARY_API_SECRET
+            api_secret: process.env.CLOUDINARY_API_SECRET,
+            secure: true,
+            cors_origin: process.env.FRONTEND_BASE_URL,
+            cors_allowed_methods: ['PUT', 'POST', 'DELETE', 'GET'],
+            cors_allowed_headers: ['Content-Type', 'Authorization']
         });
 
         const { name, prompt, photo } = req.body;
