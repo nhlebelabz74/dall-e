@@ -49,4 +49,4 @@ export const surpriseMePrompts = [
     'A Space Shuttle flying above Cape Town, digital art',
 ];
 
-export const base_url = "http://localhost:5000/"; // production url to be set later
+export const base_url = "https://themadking74-dall-e-clone-backend.onrender.com/" //"http://localhost:5000/"; // production url to be set later
