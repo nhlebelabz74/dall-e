@@ -1,4 +1,12 @@
 // array of "surprise me" prompts that will be selected at random when the user clicks the "surprise me" button
+import axios from 'axios';
+
+export const api = axios.create({
+    baseURL: "https://themadking74-dall-e-clone-backend.onrender.com/", // production url 
+    headers: {
+        'Content-Type': 'application/json'
+    }
+});
 
 export const surpriseMePrompts = [
     'an armchair in the shape of an avocado',
@@ -48,5 +56,3 @@ export const surpriseMePrompts = [
     'A man wanders through the rainy streets of Tokyo, with bright neon signs, 50mm',
     'A Space Shuttle flying above Cape Town, digital art',
 ];
-
-export const base_url = "https://themadking74-dall-e-clone-backend.onrender.com/" //"http://localhost:5000/"; // production url to be set later

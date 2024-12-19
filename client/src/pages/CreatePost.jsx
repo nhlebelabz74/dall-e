@@ -1,12 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 
 import { preview } from "../assets";
 import { FormField, Loader } from "../components";
 import { getRandomPrompt } from "../utils";
 
-import { base_url } from "../constants";
+import { api } from "../constants";
 
 const CreatePost = () => {
     const navigate = useNavigate();
@@ -24,13 +23,6 @@ const CreatePost = () => {
             setGeneratingImg(true);
             
             try {
-                const api = axios.create({
-                    baseURL: base_url,
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                });
-                
                 // testing
                 // const response = (await api.post('/api/v1/image_test', {
                 //     prompt: form.prompt

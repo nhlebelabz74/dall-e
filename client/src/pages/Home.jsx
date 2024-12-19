@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Loader, Card, FormField } from '../components';
-import { base_url } from '../constants';
-import axios from 'axios';
+import { api } from '../constants';
 
 const RenderCards = ({ data, title }) => {
     return (
@@ -29,13 +28,6 @@ const Home = () => {
             setLoading(true);
 
             try {
-                const api = axios.create({
-                    baseURL: base_url,
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                });
-
                 const response = await api.get('/api/v1/get_posts');
 
                 setPosts(response.data.posts);
